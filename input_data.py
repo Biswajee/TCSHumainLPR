@@ -13,6 +13,7 @@ Plates = []
 readJSON : read the JSON content from the file and parse necessary information
 '''
 def readJSON():
+    print('parsing JSON data...')
     # Read the data
     data = pd.read_json('Indian_Number_plates.json', lines=True)
     pd.set_option('display.max_colwidth', -1)
@@ -32,7 +33,7 @@ def readJSON():
 downloadTraining : download the training data for the problem statement and return list of number plates
 '''
 def downloadTraining(df):
-
+    print('downloading necessary resources...')
     for index, row in df.iterrows():
 
         # Get the image from the URL

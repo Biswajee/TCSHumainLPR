@@ -25,7 +25,7 @@ def processing(plate_list):
     # width=1920        $ TEST DATA | STAY AWAY $
     # channel=3         $$$$$$$$$$$$$$$$$$$$$$$$$
 
-
+    print('processing images...')
     for img in plate_list:
         # Maximize Contrast
         structElement = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
@@ -42,7 +42,7 @@ def processing(plate_list):
             adaptiveMethod=cv2.ADAPTIVE_THRESH_GAUSSIAN_C, 
             thresholdType=cv2.THRESH_BINARY_INV, 
             blockSize=19, 
-            C=9
+            C=0
         )
 
         # Find Contours
