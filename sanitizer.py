@@ -21,9 +21,9 @@ def processing(plate_list):
     height, width, channel = RGB_img.shape
     gray = cv2.cvtColor(img_ori, cv2.COLOR_BGR2GRAY)    # grayscaled image
     '''
-    # height=1080       $$$$$$$$$$$$$$$$$$$$$$$$$
-    # width=1920        $ TEST DATA | STAY AWAY $
-    # channel=3         $$$$$$$$$$$$$$$$$$$$$$$$$
+    height=1080       # $$$$$$$$$$$$$$$$$$$$$$$$$
+    width=1920        # $ TEST DATA | STAY AWAY $
+    channel=3         # $$$$$$$$$$$$$$$$$$$$$$$$$
 
     print('processing images...')
     for img in plate_list:

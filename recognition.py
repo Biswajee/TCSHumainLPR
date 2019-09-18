@@ -11,16 +11,16 @@ temp_img = []
 
 
 
-# img_ori = cv2.imread('test_file.jpg')
-# height, width, channel = img_ori.shape
-# print(img_ori.shape)
-# RGB_img = cv2.cvtColor(img_ori, cv2.COLOR_BGR2RGB)
-# height, width, channel = RGB_img.shape
-# gray = cv2.cvtColor(img_ori, cv2.COLOR_BGR2GRAY)    # grayscaled image
-# temp_img.append(gray)
+img_ori = cv2.imread('test_file.jpg')
+height, width, channel = img_ori.shape
+print(img_ori.shape)
+RGB_img = cv2.cvtColor(img_ori, cv2.COLOR_BGR2RGB)
+height, width, channel = RGB_img.shape
+gray = cv2.cvtColor(img_ori, cv2.COLOR_BGR2GRAY)    # grayscaled image
+temp_img.append(gray)
 
-data = readJSON()
-Plates = downloadTraining(data)
-print(type(Plates[0]))
-Sanity_list = processing(Plates)
+# data = readJSON()
+# Plates = downloadTraining(data)
+# print(type(Plates[0]))
+Sanity_list = processing(temp_img)
 plot(Sanity_list)
