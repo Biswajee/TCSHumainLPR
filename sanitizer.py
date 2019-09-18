@@ -21,13 +21,14 @@ def processing(plate_list):
     height, width, channel = RGB_img.shape
     gray = cv2.cvtColor(img_ori, cv2.COLOR_BGR2GRAY)    # grayscaled image
     '''
-    height=1080       # $$$$$$$$$$$$$$$$$$$$$$$$$
-    width=1920        # $ TEST DATA | STAY AWAY $
-    channel=3         # $$$$$$$$$$$$$$$$$$$$$$$$$
-
+    # height=1080       # $$$$$$$$$$$$$$$$$$$$$$$$$
+    # width=1920        # $ TEST DATA | STAY AWAY $
+    # channel=3         # $$$$$$$$$$$$$$$$$$$$$$$$$
+    
     print('processing images...')
     for img in plate_list:
         try:
+            height, width, channel = img.shape
             print('Original Image Shape',img.shape)
             
             # Grayscale
@@ -120,13 +121,12 @@ def processing(plate_list):
 plot() : accepts an input image and displays plot on screen.
 [pauses subsquent code executions] 
 '''
-def plot(img_list):
+def plot(segment_list, img_list):
     i = 0
-    for img in img_list:
+    for img, ori in zip(segment_list, img_list):
         _ , ax = plt.subplots(1, 2) # horizontally stacked subplots
         plt.figure()
         ax[0].imshow(img, cmap='gray')
-        ax[1].imshow(img, cmap='gray')
-        plt.savefig('fig_' + str(i), transparent=True, bbox_inches='tight', dpi=30)
+        ax[1].imshow(ori, cmap='gray')
         i=i+1
     plt.show()
